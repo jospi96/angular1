@@ -11,8 +11,8 @@ This single page application is developed in angular and it is splited in eight 
 For local installation you will need node.js version 19.0.1 and angular  cli.
 1. install angular material with comand "ng add @angular/material", 
 chose indaco styele end responde yes a
-"Set up global Angular Material typography styles?" 
-"Include the Angular animations module?"
+"Set up global Angular Material typography styles" 
+"Include the Angular animations module"
 
 2. installa plataform-browser with comand ng add @angular/platform-browser
 3. install  angular forms ng add @angular/forms
