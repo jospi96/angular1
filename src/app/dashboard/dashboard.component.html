@@ -1,0 +1,27 @@
+<mat-toolbar>
+  <span calss="title"> <h1>Angular1</h1></span>
+  <span class="example-spacer"></span>
+  <button *ngIf="key===null" mat-icon-button class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon" title="login">
+    <a routerLink="/login"><mat-icon>login</mat-icon></a>
+  </button>
+  <button *ngIf="key!=null" mat-icon-button class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon" title="logout" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" *ngIf="key!=null">
+  <mat-drawer mode="side" opened>
+    <ul>
+      <li><a [routerLink]="['/home',]"><span><mat-icon title="View list of user">person</mat-icon></span></a></li>
+      <li><a [routerLink]="['/add-user',]"><span><mat-icon title="Add user">person_add</mat-icon></span></a></li>
+      <li><a [routerLink]="['/post',]"><span><mat-icon title="View all post">pages</mat-icon></span></a></li>
+      <li><a [routerLink]="['/add-post',]"><span><mat-icon title="View all post">post_add</mat-icon></span></a></li>
+    </ul>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

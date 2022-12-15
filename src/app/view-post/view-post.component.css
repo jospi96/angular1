@@ -1,0 +1,84 @@
+* {
+  overflow: none;
+  background-color: #efefef;
+}
+
+.secInp {
+  position: fixed;
+  z-index: 9999;
+  top: 75px;
+  width: 30%;
+  align-items: flex-start;
+  border: 0 !important;
+  box-shadow: 0 0 0 0;
+  background-color: rgba(255, 255, 255, 0) !important;
+  margin: 0 auto;
+}
+
+summary {
+  display: contents;
+  background-color: rgba(255, 255, 255, 0);
+
+
+}
+
+summary mat-icon {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+details {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.input {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0) !important;
+  z-index: 9999;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.input input {
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.input button {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.input button mat-icon {
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.main {
+  margin: 0 auto;
+  overflow-y: scroll;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #efefef;
+  margin-top: 50px;
+
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+button {
+  margin: 0 auto;
+  border: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+button:enabled:active {
+  color: #5563b4 !important
+
+}

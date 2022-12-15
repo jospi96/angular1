@@ -1,0 +1,48 @@
+<mat-card class="example-card" #card *ngIf="post">
+  <mat-card-header >
+    <mat-card-title>{{post.title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{post.body}}</p>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+      (opened)="getPostComment(''+post.id)" (closed)="destroyComment()">
+
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          See the comment
+        </mat-panel-title>
+        <mat-panel-description>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div *ngIf="comments!=[]">
+        <div *ngFor="let comment of comments">
+          <p>
+
+
+            <mat-card>
+              <mat-card-content class="comment-card">
+                <p class="comment-name">{{comment.name}}</p>
+                <p class="comment-body">{{comment.body}}</p>
+
+
+              </mat-card-content>
+            </mat-card>
+          </p>
+        </div>
+      </div>
+      <div class="not-comment" *ngIf="comments.length===0">
+        There are no comments
+      </div>
+      <mat-label>Leave a comment</mat-label>
+      <form #fromComment="ngForm">
+        <mat-form-field class="example-full-width">
+          <textarea name="textArea" matInput type="text" ngModel="" required></textarea>
+        </mat-form-field>
+        <button [disabled]="!fromComment.form.valid" matSuffix mat-icon-button (click)="addComment(fromComment)">
+          <mat-icon>send</mat-icon>
+        </button>
+      </form>
+    </mat-expansion-panel>
+  </mat-card-content>
+</mat-card>

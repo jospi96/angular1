@@ -1,0 +1,36 @@
+mat-card {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 10vh;
+  align-items: center;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  padding: 5%;
+}
+
+textarea {
+
+  resize: vertical;
+  height: 100px;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2vh;
+}
+
+.error {
+
+  font-size: 10px;
+  color: red;
+  margin-bottom: 0;
+}
+
+.response {
+  color: green;
+}

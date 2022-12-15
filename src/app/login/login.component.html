@@ -1,0 +1,44 @@
+<app-dashboard></app-dashboard>
+<div class="container">
+    <div class="login">
+        <p class="info">
+            To log in, you must enter yours<span> Access Tokens </span>
+            which is obtained by logging in on the site to this
+            <a href="https://gorest.co.in/consumer/login" target="_blank">link</a>
+            by logging in, a temporary user will be created which will be used
+            to sign any comments and posts created.
+
+        </p>
+
+        <form name="form" #loginForm="ngForm">
+            <div class="form">
+                <p>Name:</p>
+                <input type="text" #name="ngModel" name="name" placeholder="insert your name" required ngModel>
+                <div class="error" *ngIf="name.invalid && name.touched">Your name is invalid</div>
+                <p>E-mail:</p>
+                <input type="email" #email="ngModel" name="email" placeholder="insert your name" required email ngModel>
+                <div class="error" *ngIf="email.invalid && email.touched">Your mail is invalid</div>
+                <p>Gender</p>
+                <select #gender="ngModel" ngModel [ngModelOptions]="{standalone: true}" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <div class="error" *ngIf="gender.invalid && gender.touched">Please chose one option</div>
+
+
+                <p>Key:</p>
+
+                <input type="text" #key="ngModel" name="key" placeholder="insert here your Key" required minlength="64"
+                    maxlength="64" ngModel>
+                <div class="error" *ngIf="key.invalid && key.touched">Your key is invalid</div>
+
+                <button color="priamry" type="submit" [disabled]="!loginForm.valid"
+                    (click)="login(loginForm, gender.value)">Login</button>
+
+            </div>
+
+        </form>
+
+
+    </div>
+</div>

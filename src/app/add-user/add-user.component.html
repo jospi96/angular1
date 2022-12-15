@@ -1,0 +1,46 @@
+<mat-card>
+    <mat-card-content>
+        <form #userForm="ngForm" class="example-form">
+            <div>
+                <label>Full name:</label>
+                <input type="text" #name="ngModel" name="name" minlength="8" ngModel={{userEdit.name}} required>
+                <div class="error" *ngIf="name.invalid && name.touched">Your name is invalid, min lenght
+                    is 8 characters</div>
+            </div>
+
+            <div>
+                <label>Email:</label>
+                <input type="email" #email="ngModel" name="email" placeholder="Inserisci la tua e-mail" required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9-.]+\.[a-z]{2,}$" ngModel={{userEdit.email}}>
+                <div class="error" *ngIf="email.invalid && email.touched">Youir mail is invalid</div>
+            </div>
+            <div>
+                <label>Gender:</label>
+                <select #gender="ngModel" ngModel={{userEdit.gender}} [ngModelOptions]="{standalone: true}" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <div class="error" *ngIf="gender.invalid && gender.touched">Please chose one option</div>
+
+            </div>
+            <div>
+                <label>Status:</label>
+                <select #status="ngModel" ngModel={{userEdit.status}} [ngModelOptions]="{standalone: true}" required>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+                <div class="error" *ngIf="status.invalid && status.touched">Please chose one option</div>
+
+            </div>
+            <div *ngIf="userEdit.name===''">
+                <button type="submit" [disabled]="!userForm.valid"
+                    (click)="formContron(userForm,status.value,gender.value)">Create user</button>
+            </div>
+            <div *ngIf="userEdit.name!=''">
+                <button type="submit" [disabled]="!userForm.touched"
+                    (click)="formContron(userForm,status.value,gender.value)">Edit</button>
+            </div>
+        </form>
+        <p class="response">{{response}}</p>
+    </mat-card-content>
+</mat-card>

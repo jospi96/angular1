@@ -1,0 +1,83 @@
+.example-card {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+
+
+.mat-mdc-form-field+.mat-mdc-form-field {
+  margin-left: 8px;
+  border: 0 !important;
+}
+
+mat-expansion-panel {
+  margin-top: 10px !important;
+}
+
+
+.comment-card {
+
+  display: flex;
+  flex-direction: column
+}
+
+.comment-name {
+  font-style: italic;
+  font: bold;
+  color: black;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+
+}
+
+mat-label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  resize: none;
+  overflow-y: scroll;
+
+  width: 100%;
+  height: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+form {
+
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100px;
+}
+
+form button {
+
+  max-height: 80%;
+  margin-left: 2px;
+  border: 0;
+  background-color: white;
+
+}
+
+form button:enabled:active {
+  color: #5563b4 !important
+}
+
+mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+.not-comment {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,26 @@
+<section *ngIf="!id" class="secInp">
+  <div class="input">
+    <details #search>
+      <summary>
+        <mat-icon title="search an post from post title">manage_search </mat-icon>
+      </summary>
+      <input #searchBox id="search-box" placeholder="Search post title" />
+      <button (click)="getPost(null,searchBox.value)"
+        (click)="search.removeAttribute('open')"><mat-icon>search</mat-icon></button>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="main" *ngIf="posts.length!=0">
+    <div class="post-card" *ngFor="let post of posts ">
+      <app-post-card [post]="post"></app-post-card>
+    </div>
+    <button (click)="viewMore()"><mat-icon>expand_more</mat-icon><br>
+      <p>view more</p>
+    </button>
+  </div>
+  <div class="no-result" *ngIf="posts.length===0">
+    <p>Post no result</p>
+  </div>
+</section>

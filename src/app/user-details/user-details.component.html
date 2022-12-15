@@ -1,0 +1,32 @@
+<div class="user" *ngIf="user">
+    <mat-card>
+        <mat-card-content>
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>E-mail</td>
+                    <td>Gender</td>
+                    <td>Status</td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>{{user.name}}</p>
+                    </td>
+                    <td>
+                        <p>{{user.email}}</p>
+                    </td>
+                    <td>
+                        <p>{{user.gender}}</p>
+                    </td>
+                    <td>
+                        <p>{{user.status}}</p>
+                    </td>
+                </tr>
+
+            </table>
+        </mat-card-content>
+    </mat-card>
+</div>
+<div class="post">
+    <app-view-post></app-view-post>
+</div>

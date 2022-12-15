@@ -1,0 +1,51 @@
+.user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+
+}
+
+.post {
+    margin-top: 15px;
+    background-color: #efefef;
+}
+
+table {
+    width: 100%;
+    border: 1px solid black;
+    font-size: 0.5em;
+    word-wrap: break-word;
+    word-break: break-all;
+    flex: 1 1 auto,
+}
+
+table td {
+    border: 1px solid black;
+
+
+}
+
+table td p {
+    word-wrap: break-word;
+    word-break: break-all;
+
+}
+
+mat-card {
+    width: 80%;
+    flex: 1 1 auto;
+    margin-left: 10%;
+    margin-right: 10%;
+
+
+}
+
+
+@media only screen and (max-width:556) {
+    table td {
+        resize: vertical;
+
+    }
+
+}
