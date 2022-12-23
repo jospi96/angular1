@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from 'angular-routing';
-import { environment } from 'src/environment/environment';
 import { AuthService } from './auth/auth.service';
 
 @Component({
