@@ -34,11 +34,6 @@ export class AddUserComponent implements OnInit {
     })
   }
 
-  formAssing() {
-
-
-
-  }
 
   formContron(form: NgForm, status: string, gender: string) {
 

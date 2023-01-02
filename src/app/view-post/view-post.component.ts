@@ -24,6 +24,7 @@ export class ViewPostComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
+      console.log(params.get("id"))
       this.id = params.get("id")
       this.getPost(params.get("id"), "")
 
@@ -47,6 +48,7 @@ export class ViewPostComponent implements OnInit {
           this.posts = data.body
           this.terms = term
         }
+        console.log(data)
         this.cdr.detectChanges();
       })
     }

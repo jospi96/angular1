@@ -11,7 +11,7 @@ import {HttpService} from '../services/http.service';
 })
 export class AddPostComponent {
   post: Post
-  response: string
+  response: string=""
   constructor(
     private httpService: HttpService,
     private router: Router

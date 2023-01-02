@@ -1,6 +1,6 @@
 import { HttpClient,HttpErrorResponse,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError,throwError } from 'rxjs';
+import { catchError,Observable,throwError } from 'rxjs';
 import { environment } from 'src/environment/environment';
 import { Comments, Post, User } from '../model'
 
@@ -12,7 +12,7 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  private handleError(error: HttpErrorResponse) {
+   handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
 
       console.error('An error occurred:', error.error);
@@ -36,7 +36,7 @@ export class HttpService {
 
   }
 
-  getUserList(page: string, forPage: string, type?: string, term?: string) {
+  getUserList(page: string, forPage: string, type?: string, term?: string):any {
 
 
     return this.http.get<User[]>(`${environment.userUrl}?${type}=${term}&page=${page}&per_page=${forPage}`
